@@ -20,6 +20,9 @@ spec:
       containers:
         - name: jenkins
           image: jenkins/jenkins:lts
+          env:
+            - name: JENKINS_OPTS
+              value: --prefix=/jenkins
           resources:
             limits:
               memory: "2Gi"
@@ -34,7 +37,7 @@ spec:
               containerPort: 50000
           livenessProbe:
             httpGet:
-              path: "/login"
+              path: "/jenkins/login"
               port: 8080
             initialDelaySeconds: 90
             periodSeconds: 10
@@ -42,7 +45,7 @@ spec:
             failureThreshold: 5
           readinessProbe:
             httpGet:
-              path: "/login"
+              path: "/jenkins/login"
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
