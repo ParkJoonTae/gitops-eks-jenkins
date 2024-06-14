@@ -12,7 +12,9 @@ spec:
     app: jenkins-server
   type: ClusterIP
   ports:
-    - port: 8080
+    - name: jenkins-svc-8080
+      port: 8080
       targetPort: 8080
-    - port: 50000
+    - name: jenkins-svc-50000
+      port: 50000
       targetPort: 50000
