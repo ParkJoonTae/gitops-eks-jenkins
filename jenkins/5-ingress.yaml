@@ -13,8 +13,7 @@ metadata:
     app: jenkins
 spec:
   rules:
-    - host: <jenkins host>
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
@@ -23,3 +22,4 @@ spec:
                 name: jenkins-service
                 port:
                   number: 8080
+      #host: <jenkins host>
