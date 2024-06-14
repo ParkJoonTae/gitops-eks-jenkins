@@ -4,14 +4,14 @@ metadata:
   name: jenkins
   namespace: jenkins-ci
   annotations:
-    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     # alb.ingress.kubernetes.io/certificate-arn: <your-acm-arn>
-    alb.ingress.kubernetes.io/subnets: subnet-04647af630978e3ee
+    alb.ingress.kubernetes.io/subnets: subnet-04647af630978e3ee, subnet-00aa6aba02442ec6e
   labels:
     app: jenkins
 spec:
+  ingressClassName: alb
   rules:
     - http:
         paths:
