@@ -1,3 +1,4 @@
+# alb.ingress.kubernetes.io/subnets에 public subnet 입력
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -7,7 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     # alb.ingress.kubernetes.io/certificate-arn: <your-acm-arn>
-    alb.ingress.kubernetes.io/subnets: subnet-04647af630978e3ee, subnet-00aa6aba02442ec6e
+    alb.ingress.kubernetes.io/subnets: subnet-0327bbcebcfea7636, subnet-0d839089a1c299ffe
   labels:
     app: jenkins
 spec:
